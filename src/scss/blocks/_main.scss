@@ -1,0 +1,239 @@
+// **************
+// HEADER STYLES
+// **************
+.banner {
+  position: relative;
+
+  &__content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: fit-content;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: calc(2em + 2vw);
+  }
+
+  &__title {
+    color: var(--clr-neutral-100);
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    font-size: var(--font-size-900);
+
+    @media (min-width: 1023px) {
+      font-size: var(--font-size-700);
+    }
+  }
+
+  &__icon {
+    @media (min-width: 768px) {
+      display: none;
+    }
+    @media (min-width: 1023px) {
+      display: block;
+    }
+  }
+}
+
+// ************
+// CARD STYLES
+// ************
+
+.card {
+  @media (min-width: 768px) {
+    display: flex;
+
+    & > * {
+      flex-basis: 50%;
+    }
+  }
+
+  &__content {
+    padding: 4em 1em;
+    & > * + * {
+      margin-top: 2em;
+    }
+
+    @media (min-width: 768px) {
+      padding: 7%;
+      align-items: flex-start;
+    }
+  }
+  &__title {
+    padding-inline: 0.5em;
+    font-size: var(--font-size-800);
+
+    @media (min-width: 750px) {
+      padding-inline: 0 1.5em;
+      font-size: var(--font-size-400);
+      text-align: left;
+    }
+    @media (min-width: 1024px) {
+      font-size: var(--font-size-600);
+    }
+  }
+
+  &__copy {
+    padding-inline: 0.5em;
+    color: var(--clr-neutral-300);
+    font-weight: var(--font-weight-900);
+
+    @media (min-width: 750px) {
+      padding-inline: 0 0.5em;
+      text-align: left;
+    }
+  }
+
+  &__link {
+    font-family: var(--font-family-secondary);
+    font-weight: var(--font-weight-900);
+    color: var(--clr-neutral-500);
+    text-transform: uppercase;
+    position: relative;
+    padding-inline: 0.5em;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      right: 0;
+      height: 0.65em;
+      border-radius: 2em;
+      opacity: 0.3;
+    }
+
+    &--yellow::after {
+      background-color: var(--clr-primary-100);
+    }
+
+    &--red::after {
+      background-color: var(--clr-primary-200);
+    }
+  }
+}
+
+// ******************
+// IMAGE-CARD STYLES
+// ******************
+
+.services {
+  @media (min-width: 768px) {
+    display: flex;
+
+    & > * {
+      flex-basis: 50vw;
+    }
+  }
+}
+.image-card {
+  position: relative;
+
+  &__content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 3.5em 1em;
+    row-gap: 2em;
+
+    @media (min-width: 768px) {
+      padding: 3.5em 2em;
+    }
+
+    @media (min-width: 1023px) {
+      padding: 3.5em 5.6em;
+    }
+    &--green {
+      color: var(--clr-primary-500);
+    }
+
+    &--blue {
+      color: var(--clr-primary-400);
+    }
+  }
+  &__title {
+    font-size: var(--font-size-500);
+  }
+}
+
+// ********************
+// TESTIMONIALS STYLES
+// ********************
+.testimonials {
+  row-gap: 4em;
+  padding-block: 4em;
+
+  &__title {
+    font-size: var(--font-size-200);
+    letter-spacing: 0.2em;
+    color: var(--clr-neutral-200);
+    text-transform: uppercase;
+  }
+}
+
+.card-container {
+  & > * + * {
+    margin-top: 4em;
+  }
+  @media (min-width: 768px) {
+    display: flex;
+    & > * + * {
+      margin-top: 0em;
+    }
+  }
+}
+.client {
+  &-card {
+    row-gap: 2em;
+  }
+
+  &__image {
+    width: 4em;
+    border-radius: 50%;
+  }
+
+  &__testimonial {
+    color: var(--clr-neutral-400);
+    padding-inline: 1.25em;
+  }
+  &__name {
+    font-size: var(--font-size-300);
+    font-weight: var(--font-weight-900);
+    font-family: var(--font-family-secondary);
+    color: var(--clr-neutral-500);
+    @media (min-width: 768px) {
+      font-size: var(--font-size-200);
+    }
+  }
+  &__job {
+    font-size: var(--font-size-100);
+    color: var(--clr-neutral-200);
+  }
+}
+
+.info-wrapper {
+  row-gap: 0.5em;
+}
+
+// ****************
+// PROJECTS STYLES
+// ****************
+.projects {
+  display: flex;
+  flex-wrap: wrap;
+
+  @media (min-width: 768px) {
+    flex-wrap: nowrap;
+
+    & > * {
+      flex-basis: 25%;
+    }
+  }
+  & > * {
+    flex-basis: 50vw;
+  }
+}
