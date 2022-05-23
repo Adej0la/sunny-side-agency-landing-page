@@ -5,14 +5,19 @@ const menuBtn = document.querySelector(".menu-button");
 menuBtn.addEventListener("click", () => {
   let isExpanded = menuBtn.getAttribute("aria-expanded");
   if (isExpanded == "false") {
-    menuBtn.setAttribute("aria-expanded", "true");
     document.body.classList.add("appear");
+    menuBtn.setAttribute("aria-expanded", "true");
   } else {
-    menuBtn.setAttribute("aria-expanded", "false");
     document.body.classList.remove("appear");
+    menuBtn.setAttribute("aria-expanded", "false");
   }
 });
 
 menuItems.forEach((item) =>
-  item.addEventListener("click", () => document.body.classList.remove("appear"))
+  item.addEventListener("click", () => {
+    document.body.classList.remove("appear");
+    menuBtn.setAttribute("aria-expanded", "false");
+  })
 );
+
+// Add a function that disappears menu when any other part of the window/body or the escape button is clicked
