@@ -65,6 +65,12 @@
         margin-top: 1.15em;
       }
     }
+
+    @media (min-width: 1024px) {
+      & > * + * {
+        margin-top: 2em;
+      }
+    }
   }
   &__title {
     padding-inline: 0.5em;
